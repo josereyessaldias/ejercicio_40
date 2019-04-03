@@ -6,4 +6,7 @@ class User < ApplicationRecord
 
   enum role: [:admin, :player]
   attribute :role, :integer, default: :player
+
+  has_many :user_activity
+  has_many :activities, through: :user_activity
 end
