@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get 'pages/index'
+  post 'activity/:user_id', to: 'pages#create_activity', as: 'asigne_activity'
+
   devise_for :users, controllers: {
         registrations: 'user/registrations'
       }
