@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_03_025426) do
+ActiveRecord::Schema.define(version: 2019_04_05_001606) do
 
   create_table "activities", force: :cascade do |t|
     t.string "name"
@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 2019_04_03_025426) do
     t.string "place"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "category_id"
+    t.index ["category_id"], name: "index_activities_on_category_id"
   end
 
   create_table "activity_categories", force: :cascade do |t|
@@ -33,6 +35,8 @@ ActiveRecord::Schema.define(version: 2019_04_03_025426) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "past"
+    t.string "sustantivo"
   end
 
   create_table "user_activities", force: :cascade do |t|
