@@ -9,12 +9,16 @@
 				<% if act.activity.category_id == category.id %>
 					<% if act.activity.author %>
 						<%= act.activity.name %> de <%= act.activity.author %> | leído el <%= act.start.strftime("%F") %> | registrado <%= time_ago_in_words(act.activity.created_at) %> ago 
-						<%= link_to 'Editar', edit_activity_path(@user,act.activity.id) %>
-						<%= link_to 'Borrar actividad', destroy_activity_path(@user,act.activity.id), method: :delete %>
+						<% if can?(:destroy, act) %>
+							<%= link_to 'Editar', edit_activity_path(@user,act.activity.id) %>
+							<%= link_to 'Borrar actividad', destroy_activity_path(@user,act.activity.id), method: :delete %>
+						<% end %>
 					<% else %>
 						<%= act.activity.name %> | visto el <%= act.start.strftime("%F") %> | registrado <%= time_ago_in_words(act.activity.created_at) %> ago
-						<%= link_to 'Editar', edit_activity_path(@user,act.activity.id) %>
-						<%= link_to 'Borrar actividad', destroy_activity_path(@user,act.activity.id), method: :delete %>
+						<% if can?(:destroy, act) %>
+							<%= link_to 'Editar', edit_activity_path(@user,act.activity.id) %>
+							<%= link_to 'Borrar actividad', destroy_activity_path(@user,act.activity.id), method: :delete %>
+						<% end %>
 					<% end %>
 					
 					<br>
