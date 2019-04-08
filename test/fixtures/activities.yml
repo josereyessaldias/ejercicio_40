@@ -4,12 +4,10 @@ one:
   name: MyString
   author: MyString
   place: MyString
-  start: 2019-04-02 22:42:14
-  end: 2019-04-02 22:42:14
+  
 
 two:
   name: MyString
   author: MyString
   place: MyString
-  start: 2019-04-02 22:42:14
-  end: 2019-04-02 22:42:14
+
