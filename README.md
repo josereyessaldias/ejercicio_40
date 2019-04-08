@@ -1,5 +1,10 @@
 # README
 
+Articulé los modelos de Usuarios, Actividades, Usuarios-Actividades y Categorías. Además, implementé cancancan con dos roles de usuarios: player y admin.
+Los tests nuevamente no los pude implementar. No sé si finalmente pueda hacerlo.
+Adjunto, además, el modelo físico del proyecto final.
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
